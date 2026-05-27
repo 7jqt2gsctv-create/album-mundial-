@@ -1,0 +1,1179 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Álbum Mundial 2026</title>
+
+<style>
+body {
+    background:#111827;
+    color:white;
+    font-family:Arial;
+    margin:0;
+    padding:20px;
+}
+
+h1 {
+    text-align:center;
+    font-size:42px;
+}
+
+.grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(80px,1fr));
+    gap:10px;
+}
+
+.titulo {
+    grid-column:1/-1;
+    font-size:28px;
+    margin-top:25px;
+    color:#facc15;
+}
+
+.figurita {
+    background:#1f2937;
+    border:2px solid #374151;
+    color:white;
+    padding:16px;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.figurita.activa {
+    background:#22c55e;
+}
+
+.contador {
+    position:sticky;
+    top:0;
+    background:#111827;
+    padding:15px;
+    text-align:center;
+    font-size:24px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<h1>⚽ Álbum Mundial 2026</h1>
+
+<input 
+type="text" 
+id="buscador" 
+placeholder="Buscar país..." 
+onkeyup="buscarPais()"
+style="
+width:100%;
+padding:14px;
+margin:20px 0;
+border-radius:12px;
+border:none;
+font-size:18px;
+background:#1f2937;
+color:white;
+"
+/>
+
+
+<div class="contador">
+Figuritas conseguidas: <span id="contador">0</span>
+</div>
+
+<div class="grid">
+<div class="titulo">🌍 MEXICO</div>
+<button class="figurita" onclick="toggle(this, 'MEXICO-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'MEXICO-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'MEXICO-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'MEXICO-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'MEXICO-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'MEXICO-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'MEXICO-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'MEXICO-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'MEXICO-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'MEXICO-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'MEXICO-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'MEXICO-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'MEXICO-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'MEXICO-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'MEXICO-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'MEXICO-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'MEXICO-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'MEXICO-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'MEXICO-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'MEXICO-20')">20</button>
+<div class="titulo">🌍 S.AFRICA</div>
+<button class="figurita" onclick="toggle(this, 'S.AFRICA-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'S.AFRICA-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'S.AFRICA-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'S.AFRICA-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'S.AFRICA-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'S.AFRICA-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'S.AFRICA-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'S.AFRICA-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'S.AFRICA-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'S.AFRICA-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'S.AFRICA-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'S.AFRICA-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'S.AFRICA-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'S.AFRICA-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'S.AFRICA-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'S.AFRICA-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'S.AFRICA-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'S.AFRICA-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'S.AFRICA-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'S.AFRICA-20')">20</button>
+<div class="titulo">🌍 KOREA</div>
+<button class="figurita" onclick="toggle(this, 'KOREA-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'KOREA-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'KOREA-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'KOREA-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'KOREA-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'KOREA-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'KOREA-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'KOREA-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'KOREA-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'KOREA-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'KOREA-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'KOREA-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'KOREA-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'KOREA-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'KOREA-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'KOREA-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'KOREA-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'KOREA-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'KOREA-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'KOREA-20')">20</button>
+<div class="titulo">🌍 R.CHECA</div>
+<button class="figurita" onclick="toggle(this, 'R.CHECA-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'R.CHECA-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'R.CHECA-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'R.CHECA-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'R.CHECA-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'R.CHECA-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'R.CHECA-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'R.CHECA-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'R.CHECA-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'R.CHECA-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'R.CHECA-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'R.CHECA-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'R.CHECA-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'R.CHECA-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'R.CHECA-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'R.CHECA-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'R.CHECA-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'R.CHECA-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'R.CHECA-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'R.CHECA-20')">20</button>
+<div class="titulo">🌍 CANADÁ</div>
+<button class="figurita" onclick="toggle(this, 'CANADÁ-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'CANADÁ-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'CANADÁ-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'CANADÁ-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'CANADÁ-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'CANADÁ-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'CANADÁ-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'CANADÁ-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'CANADÁ-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'CANADÁ-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'CANADÁ-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'CANADÁ-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'CANADÁ-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'CANADÁ-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'CANADÁ-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'CANADÁ-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'CANADÁ-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'CANADÁ-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'CANADÁ-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'CANADÁ-20')">20</button>
+<div class="titulo">🌍 BOSNIA</div>
+<button class="figurita" onclick="toggle(this, 'BOSNIA-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'BOSNIA-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'BOSNIA-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'BOSNIA-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'BOSNIA-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'BOSNIA-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'BOSNIA-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'BOSNIA-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'BOSNIA-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'BOSNIA-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'BOSNIA-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'BOSNIA-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'BOSNIA-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'BOSNIA-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'BOSNIA-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'BOSNIA-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'BOSNIA-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'BOSNIA-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'BOSNIA-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'BOSNIA-20')">20</button>
+<div class="titulo">🌍 QATAR</div>
+<button class="figurita" onclick="toggle(this, 'QATAR-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'QATAR-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'QATAR-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'QATAR-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'QATAR-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'QATAR-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'QATAR-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'QATAR-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'QATAR-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'QATAR-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'QATAR-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'QATAR-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'QATAR-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'QATAR-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'QATAR-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'QATAR-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'QATAR-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'QATAR-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'QATAR-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'QATAR-20')">20</button>
+<div class="titulo">🌍 SUIZA</div>
+<button class="figurita" onclick="toggle(this, 'SUIZA-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'SUIZA-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'SUIZA-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'SUIZA-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'SUIZA-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'SUIZA-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'SUIZA-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'SUIZA-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'SUIZA-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'SUIZA-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'SUIZA-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'SUIZA-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'SUIZA-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'SUIZA-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'SUIZA-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'SUIZA-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'SUIZA-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'SUIZA-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'SUIZA-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'SUIZA-20')">20</button>
+<div class="titulo">🌍 BRAZIL</div>
+<button class="figurita" onclick="toggle(this, 'BRAZIL-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'BRAZIL-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'BRAZIL-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'BRAZIL-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'BRAZIL-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'BRAZIL-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'BRAZIL-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'BRAZIL-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'BRAZIL-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'BRAZIL-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'BRAZIL-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'BRAZIL-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'BRAZIL-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'BRAZIL-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'BRAZIL-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'BRAZIL-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'BRAZIL-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'BRAZIL-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'BRAZIL-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'BRAZIL-20')">20</button>
+<div class="titulo">🌍 MARRUECOS</div>
+<button class="figurita" onclick="toggle(this, 'MARRUECOS-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'MARRUECOS-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'MARRUECOS-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'MARRUECOS-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'MARRUECOS-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'MARRUECOS-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'MARRUECOS-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'MARRUECOS-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'MARRUECOS-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'MARRUECOS-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'MARRUECOS-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'MARRUECOS-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'MARRUECOS-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'MARRUECOS-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'MARRUECOS-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'MARRUECOS-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'MARRUECOS-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'MARRUECOS-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'MARRUECOS-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'MARRUECOS-20')">20</button>
+<div class="titulo">🌍 HAITI</div>
+<button class="figurita" onclick="toggle(this, 'HAITI-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'HAITI-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'HAITI-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'HAITI-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'HAITI-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'HAITI-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'HAITI-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'HAITI-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'HAITI-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'HAITI-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'HAITI-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'HAITI-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'HAITI-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'HAITI-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'HAITI-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'HAITI-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'HAITI-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'HAITI-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'HAITI-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'HAITI-20')">20</button>
+<div class="titulo">🌍 ESCOCIA</div>
+<button class="figurita" onclick="toggle(this, 'ESCOCIA-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'ESCOCIA-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'ESCOCIA-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'ESCOCIA-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'ESCOCIA-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'ESCOCIA-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'ESCOCIA-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'ESCOCIA-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'ESCOCIA-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'ESCOCIA-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'ESCOCIA-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'ESCOCIA-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'ESCOCIA-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'ESCOCIA-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'ESCOCIA-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'ESCOCIA-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'ESCOCIA-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'ESCOCIA-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'ESCOCIA-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'ESCOCIA-20')">20</button>
+<div class="titulo">🌍 EEUU</div>
+<button class="figurita" onclick="toggle(this, 'EEUU-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'EEUU-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'EEUU-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'EEUU-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'EEUU-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'EEUU-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'EEUU-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'EEUU-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'EEUU-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'EEUU-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'EEUU-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'EEUU-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'EEUU-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'EEUU-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'EEUU-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'EEUU-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'EEUU-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'EEUU-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'EEUU-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'EEUU-20')">20</button>
+<div class="titulo">🌍 PARAGUAY</div>
+<button class="figurita" onclick="toggle(this, 'PARAGUAY-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'PARAGUAY-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'PARAGUAY-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'PARAGUAY-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'PARAGUAY-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'PARAGUAY-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'PARAGUAY-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'PARAGUAY-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'PARAGUAY-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'PARAGUAY-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'PARAGUAY-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'PARAGUAY-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'PARAGUAY-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'PARAGUAY-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'PARAGUAY-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'PARAGUAY-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'PARAGUAY-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'PARAGUAY-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'PARAGUAY-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'PARAGUAY-20')">20</button>
+<div class="titulo">🌍 AUSTRALIA</div>
+<button class="figurita" onclick="toggle(this, 'AUSTRALIA-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRALIA-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRALIA-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRALIA-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRALIA-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRALIA-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRALIA-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRALIA-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRALIA-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRALIA-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRALIA-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRALIA-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRALIA-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRALIA-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRALIA-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRALIA-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRALIA-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRALIA-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRALIA-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRALIA-20')">20</button>
+<div class="titulo">🌍 TURQUIA</div>
+<button class="figurita" onclick="toggle(this, 'TURQUIA-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'TURQUIA-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'TURQUIA-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'TURQUIA-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'TURQUIA-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'TURQUIA-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'TURQUIA-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'TURQUIA-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'TURQUIA-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'TURQUIA-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'TURQUIA-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'TURQUIA-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'TURQUIA-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'TURQUIA-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'TURQUIA-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'TURQUIA-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'TURQUIA-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'TURQUIA-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'TURQUIA-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'TURQUIA-20')">20</button>
+<div class="titulo">🌍 ALEMANIA</div>
+<button class="figurita" onclick="toggle(this, 'ALEMANIA-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'ALEMANIA-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'ALEMANIA-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'ALEMANIA-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'ALEMANIA-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'ALEMANIA-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'ALEMANIA-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'ALEMANIA-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'ALEMANIA-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'ALEMANIA-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'ALEMANIA-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'ALEMANIA-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'ALEMANIA-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'ALEMANIA-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'ALEMANIA-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'ALEMANIA-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'ALEMANIA-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'ALEMANIA-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'ALEMANIA-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'ALEMANIA-20')">20</button>
+<div class="titulo">🌍 CURACAO</div>
+<button class="figurita" onclick="toggle(this, 'CURACAO-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'CURACAO-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'CURACAO-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'CURACAO-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'CURACAO-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'CURACAO-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'CURACAO-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'CURACAO-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'CURACAO-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'CURACAO-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'CURACAO-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'CURACAO-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'CURACAO-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'CURACAO-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'CURACAO-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'CURACAO-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'CURACAO-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'CURACAO-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'CURACAO-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'CURACAO-20')">20</button>
+<div class="titulo">🌍 C.D.MARFIL</div>
+<button class="figurita" onclick="toggle(this, 'C.D.MARFIL-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'C.D.MARFIL-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'C.D.MARFIL-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'C.D.MARFIL-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'C.D.MARFIL-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'C.D.MARFIL-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'C.D.MARFIL-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'C.D.MARFIL-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'C.D.MARFIL-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'C.D.MARFIL-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'C.D.MARFIL-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'C.D.MARFIL-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'C.D.MARFIL-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'C.D.MARFIL-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'C.D.MARFIL-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'C.D.MARFIL-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'C.D.MARFIL-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'C.D.MARFIL-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'C.D.MARFIL-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'C.D.MARFIL-20')">20</button>
+<div class="titulo">🌍 ECUADOR</div>
+<button class="figurita" onclick="toggle(this, 'ECUADOR-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'ECUADOR-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'ECUADOR-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'ECUADOR-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'ECUADOR-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'ECUADOR-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'ECUADOR-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'ECUADOR-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'ECUADOR-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'ECUADOR-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'ECUADOR-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'ECUADOR-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'ECUADOR-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'ECUADOR-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'ECUADOR-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'ECUADOR-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'ECUADOR-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'ECUADOR-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'ECUADOR-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'ECUADOR-20')">20</button>
+<div class="titulo">🌍 HOLANDA</div>
+<button class="figurita" onclick="toggle(this, 'HOLANDA-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'HOLANDA-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'HOLANDA-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'HOLANDA-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'HOLANDA-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'HOLANDA-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'HOLANDA-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'HOLANDA-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'HOLANDA-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'HOLANDA-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'HOLANDA-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'HOLANDA-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'HOLANDA-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'HOLANDA-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'HOLANDA-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'HOLANDA-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'HOLANDA-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'HOLANDA-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'HOLANDA-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'HOLANDA-20')">20</button>
+<div class="titulo">🌍 JAPON</div>
+<button class="figurita" onclick="toggle(this, 'JAPON-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'JAPON-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'JAPON-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'JAPON-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'JAPON-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'JAPON-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'JAPON-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'JAPON-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'JAPON-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'JAPON-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'JAPON-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'JAPON-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'JAPON-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'JAPON-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'JAPON-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'JAPON-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'JAPON-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'JAPON-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'JAPON-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'JAPON-20')">20</button>
+<div class="titulo">🌍 SUECIA</div>
+<button class="figurita" onclick="toggle(this, 'SUECIA-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'SUECIA-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'SUECIA-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'SUECIA-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'SUECIA-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'SUECIA-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'SUECIA-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'SUECIA-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'SUECIA-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'SUECIA-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'SUECIA-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'SUECIA-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'SUECIA-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'SUECIA-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'SUECIA-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'SUECIA-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'SUECIA-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'SUECIA-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'SUECIA-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'SUECIA-20')">20</button>
+<div class="titulo">🌍 TUNEZ</div>
+<button class="figurita" onclick="toggle(this, 'TUNEZ-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'TUNEZ-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'TUNEZ-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'TUNEZ-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'TUNEZ-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'TUNEZ-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'TUNEZ-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'TUNEZ-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'TUNEZ-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'TUNEZ-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'TUNEZ-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'TUNEZ-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'TUNEZ-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'TUNEZ-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'TUNEZ-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'TUNEZ-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'TUNEZ-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'TUNEZ-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'TUNEZ-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'TUNEZ-20')">20</button>
+<div class="titulo">🌍 BELGICA</div>
+<button class="figurita" onclick="toggle(this, 'BELGICA-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'BELGICA-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'BELGICA-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'BELGICA-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'BELGICA-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'BELGICA-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'BELGICA-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'BELGICA-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'BELGICA-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'BELGICA-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'BELGICA-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'BELGICA-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'BELGICA-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'BELGICA-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'BELGICA-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'BELGICA-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'BELGICA-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'BELGICA-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'BELGICA-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'BELGICA-20')">20</button>
+<div class="titulo">🌍 EGYPTO</div>
+<button class="figurita" onclick="toggle(this, 'EGYPTO-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'EGYPTO-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'EGYPTO-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'EGYPTO-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'EGYPTO-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'EGYPTO-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'EGYPTO-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'EGYPTO-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'EGYPTO-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'EGYPTO-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'EGYPTO-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'EGYPTO-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'EGYPTO-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'EGYPTO-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'EGYPTO-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'EGYPTO-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'EGYPTO-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'EGYPTO-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'EGYPTO-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'EGYPTO-20')">20</button>
+<div class="titulo">🌍 IRAN</div>
+<button class="figurita" onclick="toggle(this, 'IRAN-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'IRAN-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'IRAN-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'IRAN-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'IRAN-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'IRAN-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'IRAN-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'IRAN-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'IRAN-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'IRAN-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'IRAN-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'IRAN-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'IRAN-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'IRAN-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'IRAN-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'IRAN-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'IRAN-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'IRAN-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'IRAN-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'IRAN-20')">20</button>
+<div class="titulo">🌍 NEWZELAND</div>
+<button class="figurita" onclick="toggle(this, 'NEWZELAND-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'NEWZELAND-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'NEWZELAND-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'NEWZELAND-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'NEWZELAND-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'NEWZELAND-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'NEWZELAND-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'NEWZELAND-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'NEWZELAND-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'NEWZELAND-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'NEWZELAND-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'NEWZELAND-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'NEWZELAND-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'NEWZELAND-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'NEWZELAND-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'NEWZELAND-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'NEWZELAND-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'NEWZELAND-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'NEWZELAND-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'NEWZELAND-20')">20</button>
+<div class="titulo">🌍 ESPAÑA</div>
+<button class="figurita" onclick="toggle(this, 'ESPAÑA-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'ESPAÑA-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'ESPAÑA-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'ESPAÑA-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'ESPAÑA-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'ESPAÑA-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'ESPAÑA-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'ESPAÑA-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'ESPAÑA-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'ESPAÑA-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'ESPAÑA-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'ESPAÑA-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'ESPAÑA-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'ESPAÑA-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'ESPAÑA-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'ESPAÑA-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'ESPAÑA-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'ESPAÑA-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'ESPAÑA-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'ESPAÑA-20')">20</button>
+<div class="titulo">🌍 CABOVERDE</div>
+<button class="figurita" onclick="toggle(this, 'CABOVERDE-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'CABOVERDE-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'CABOVERDE-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'CABOVERDE-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'CABOVERDE-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'CABOVERDE-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'CABOVERDE-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'CABOVERDE-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'CABOVERDE-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'CABOVERDE-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'CABOVERDE-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'CABOVERDE-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'CABOVERDE-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'CABOVERDE-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'CABOVERDE-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'CABOVERDE-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'CABOVERDE-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'CABOVERDE-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'CABOVERDE-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'CABOVERDE-20')">20</button>
+<div class="titulo">🌍 ARABASAUDI</div>
+<button class="figurita" onclick="toggle(this, 'ARABASAUDI-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'ARABASAUDI-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'ARABASAUDI-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'ARABASAUDI-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'ARABASAUDI-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'ARABASAUDI-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'ARABASAUDI-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'ARABASAUDI-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'ARABASAUDI-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'ARABASAUDI-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'ARABASAUDI-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'ARABASAUDI-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'ARABASAUDI-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'ARABASAUDI-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'ARABASAUDI-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'ARABASAUDI-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'ARABASAUDI-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'ARABASAUDI-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'ARABASAUDI-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'ARABASAUDI-20')">20</button>
+<div class="titulo">🌍 URUGUAY</div>
+<button class="figurita" onclick="toggle(this, 'URUGUAY-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'URUGUAY-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'URUGUAY-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'URUGUAY-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'URUGUAY-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'URUGUAY-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'URUGUAY-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'URUGUAY-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'URUGUAY-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'URUGUAY-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'URUGUAY-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'URUGUAY-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'URUGUAY-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'URUGUAY-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'URUGUAY-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'URUGUAY-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'URUGUAY-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'URUGUAY-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'URUGUAY-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'URUGUAY-20')">20</button>
+<div class="titulo">🌍 FRANCIA</div>
+<button class="figurita" onclick="toggle(this, 'FRANCIA-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'FRANCIA-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'FRANCIA-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'FRANCIA-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'FRANCIA-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'FRANCIA-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'FRANCIA-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'FRANCIA-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'FRANCIA-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'FRANCIA-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'FRANCIA-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'FRANCIA-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'FRANCIA-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'FRANCIA-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'FRANCIA-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'FRANCIA-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'FRANCIA-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'FRANCIA-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'FRANCIA-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'FRANCIA-20')">20</button>
+<div class="titulo">🌍 SENEGAL</div>
+<button class="figurita" onclick="toggle(this, 'SENEGAL-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'SENEGAL-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'SENEGAL-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'SENEGAL-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'SENEGAL-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'SENEGAL-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'SENEGAL-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'SENEGAL-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'SENEGAL-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'SENEGAL-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'SENEGAL-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'SENEGAL-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'SENEGAL-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'SENEGAL-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'SENEGAL-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'SENEGAL-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'SENEGAL-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'SENEGAL-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'SENEGAL-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'SENEGAL-20')">20</button>
+<div class="titulo">🌍 IRAQ</div>
+<button class="figurita" onclick="toggle(this, 'IRAQ-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'IRAQ-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'IRAQ-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'IRAQ-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'IRAQ-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'IRAQ-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'IRAQ-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'IRAQ-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'IRAQ-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'IRAQ-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'IRAQ-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'IRAQ-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'IRAQ-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'IRAQ-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'IRAQ-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'IRAQ-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'IRAQ-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'IRAQ-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'IRAQ-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'IRAQ-20')">20</button>
+<div class="titulo">🌍 NORUEGA</div>
+<button class="figurita" onclick="toggle(this, 'NORUEGA-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'NORUEGA-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'NORUEGA-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'NORUEGA-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'NORUEGA-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'NORUEGA-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'NORUEGA-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'NORUEGA-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'NORUEGA-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'NORUEGA-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'NORUEGA-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'NORUEGA-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'NORUEGA-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'NORUEGA-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'NORUEGA-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'NORUEGA-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'NORUEGA-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'NORUEGA-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'NORUEGA-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'NORUEGA-20')">20</button>
+<div class="titulo">🌍 ARGENTINA</div>
+<button class="figurita" onclick="toggle(this, 'ARGENTINA-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'ARGENTINA-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'ARGENTINA-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'ARGENTINA-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'ARGENTINA-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'ARGENTINA-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'ARGENTINA-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'ARGENTINA-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'ARGENTINA-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'ARGENTINA-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'ARGENTINA-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'ARGENTINA-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'ARGENTINA-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'ARGENTINA-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'ARGENTINA-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'ARGENTINA-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'ARGENTINA-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'ARGENTINA-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'ARGENTINA-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'ARGENTINA-20')">20</button>
+<div class="titulo">🌍 ALGERIA</div>
+<button class="figurita" onclick="toggle(this, 'ALGERIA-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'ALGERIA-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'ALGERIA-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'ALGERIA-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'ALGERIA-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'ALGERIA-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'ALGERIA-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'ALGERIA-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'ALGERIA-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'ALGERIA-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'ALGERIA-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'ALGERIA-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'ALGERIA-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'ALGERIA-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'ALGERIA-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'ALGERIA-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'ALGERIA-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'ALGERIA-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'ALGERIA-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'ALGERIA-20')">20</button>
+<div class="titulo">🌍 AUSTRIA</div>
+<button class="figurita" onclick="toggle(this, 'AUSTRIA-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRIA-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRIA-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRIA-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRIA-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRIA-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRIA-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRIA-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRIA-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRIA-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRIA-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRIA-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRIA-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRIA-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRIA-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRIA-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRIA-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRIA-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRIA-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'AUSTRIA-20')">20</button>
+<div class="titulo">🌍 JORDANIA</div>
+<button class="figurita" onclick="toggle(this, 'JORDANIA-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'JORDANIA-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'JORDANIA-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'JORDANIA-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'JORDANIA-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'JORDANIA-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'JORDANIA-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'JORDANIA-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'JORDANIA-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'JORDANIA-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'JORDANIA-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'JORDANIA-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'JORDANIA-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'JORDANIA-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'JORDANIA-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'JORDANIA-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'JORDANIA-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'JORDANIA-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'JORDANIA-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'JORDANIA-20')">20</button>
+<div class="titulo">🌍 PORTUGAL</div>
+<button class="figurita" onclick="toggle(this, 'PORTUGAL-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'PORTUGAL-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'PORTUGAL-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'PORTUGAL-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'PORTUGAL-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'PORTUGAL-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'PORTUGAL-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'PORTUGAL-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'PORTUGAL-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'PORTUGAL-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'PORTUGAL-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'PORTUGAL-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'PORTUGAL-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'PORTUGAL-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'PORTUGAL-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'PORTUGAL-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'PORTUGAL-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'PORTUGAL-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'PORTUGAL-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'PORTUGAL-20')">20</button>
+<div class="titulo">🌍 CONGO</div>
+<button class="figurita" onclick="toggle(this, 'CONGO-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'CONGO-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'CONGO-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'CONGO-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'CONGO-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'CONGO-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'CONGO-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'CONGO-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'CONGO-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'CONGO-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'CONGO-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'CONGO-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'CONGO-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'CONGO-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'CONGO-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'CONGO-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'CONGO-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'CONGO-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'CONGO-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'CONGO-20')">20</button>
+<div class="titulo">🌍 UZBEKISTAN</div>
+<button class="figurita" onclick="toggle(this, 'UZBEKISTAN-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'UZBEKISTAN-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'UZBEKISTAN-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'UZBEKISTAN-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'UZBEKISTAN-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'UZBEKISTAN-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'UZBEKISTAN-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'UZBEKISTAN-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'UZBEKISTAN-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'UZBEKISTAN-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'UZBEKISTAN-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'UZBEKISTAN-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'UZBEKISTAN-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'UZBEKISTAN-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'UZBEKISTAN-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'UZBEKISTAN-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'UZBEKISTAN-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'UZBEKISTAN-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'UZBEKISTAN-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'UZBEKISTAN-20')">20</button>
+<div class="titulo">🌍 COLOMBIA</div>
+<button class="figurita" onclick="toggle(this, 'COLOMBIA-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'COLOMBIA-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'COLOMBIA-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'COLOMBIA-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'COLOMBIA-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'COLOMBIA-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'COLOMBIA-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'COLOMBIA-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'COLOMBIA-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'COLOMBIA-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'COLOMBIA-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'COLOMBIA-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'COLOMBIA-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'COLOMBIA-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'COLOMBIA-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'COLOMBIA-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'COLOMBIA-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'COLOMBIA-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'COLOMBIA-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'COLOMBIA-20')">20</button>
+<div class="titulo">🌍 INGLATERRA</div>
+<button class="figurita" onclick="toggle(this, 'INGLATERRA-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'INGLATERRA-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'INGLATERRA-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'INGLATERRA-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'INGLATERRA-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'INGLATERRA-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'INGLATERRA-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'INGLATERRA-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'INGLATERRA-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'INGLATERRA-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'INGLATERRA-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'INGLATERRA-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'INGLATERRA-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'INGLATERRA-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'INGLATERRA-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'INGLATERRA-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'INGLATERRA-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'INGLATERRA-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'INGLATERRA-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'INGLATERRA-20')">20</button>
+<div class="titulo">🌍 CROACIA</div>
+<button class="figurita" onclick="toggle(this, 'CROACIA-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'CROACIA-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'CROACIA-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'CROACIA-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'CROACIA-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'CROACIA-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'CROACIA-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'CROACIA-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'CROACIA-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'CROACIA-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'CROACIA-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'CROACIA-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'CROACIA-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'CROACIA-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'CROACIA-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'CROACIA-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'CROACIA-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'CROACIA-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'CROACIA-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'CROACIA-20')">20</button>
+<div class="titulo">🌍 GHANA</div>
+<button class="figurita" onclick="toggle(this, 'GHANA-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'GHANA-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'GHANA-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'GHANA-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'GHANA-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'GHANA-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'GHANA-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'GHANA-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'GHANA-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'GHANA-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'GHANA-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'GHANA-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'GHANA-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'GHANA-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'GHANA-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'GHANA-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'GHANA-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'GHANA-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'GHANA-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'GHANA-20')">20</button>
+<div class="titulo">🌍 PANAMA</div>
+<button class="figurita" onclick="toggle(this, 'PANAMA-1')">1</button>
+<button class="figurita" onclick="toggle(this, 'PANAMA-2')">2</button>
+<button class="figurita" onclick="toggle(this, 'PANAMA-3')">3</button>
+<button class="figurita" onclick="toggle(this, 'PANAMA-4')">4</button>
+<button class="figurita" onclick="toggle(this, 'PANAMA-5')">5</button>
+<button class="figurita" onclick="toggle(this, 'PANAMA-6')">6</button>
+<button class="figurita" onclick="toggle(this, 'PANAMA-7')">7</button>
+<button class="figurita" onclick="toggle(this, 'PANAMA-8')">8</button>
+<button class="figurita" onclick="toggle(this, 'PANAMA-9')">9</button>
+<button class="figurita" onclick="toggle(this, 'PANAMA-10')">10</button>
+<button class="figurita" onclick="toggle(this, 'PANAMA-11')">11</button>
+<button class="figurita" onclick="toggle(this, 'PANAMA-12')">12</button>
+<button class="figurita" onclick="toggle(this, 'PANAMA-13')">13</button>
+<button class="figurita" onclick="toggle(this, 'PANAMA-14')">14</button>
+<button class="figurita" onclick="toggle(this, 'PANAMA-15')">15</button>
+<button class="figurita" onclick="toggle(this, 'PANAMA-16')">16</button>
+<button class="figurita" onclick="toggle(this, 'PANAMA-17')">17</button>
+<button class="figurita" onclick="toggle(this, 'PANAMA-18')">18</button>
+<button class="figurita" onclick="toggle(this, 'PANAMA-19')">19</button>
+<button class="figurita" onclick="toggle(this, 'PANAMA-20')">20</button>
+
+</div>
+
+<script>
+let guardadas = JSON.parse(localStorage.getItem("figuritas")) || [];
+
+function actualizar() {
+    document.getElementById("contador").innerText = guardadas.length;
+}
+
+function toggle(btn,id) {
+    btn.classList.toggle("activa");
+
+    if(guardadas.includes(id)) {
+        guardadas = guardadas.filter(x => x !== id);
+    } else {
+        guardadas.push(id);
+    }
+
+    localStorage.setItem("figuritas", JSON.stringify(guardadas));
+    actualizar();
+}
+
+window.onload = () => {
+    document.querySelectorAll(".figurita").forEach(btn => {
+        const id = btn.innerText;
+    });
+
+    document.querySelectorAll(".figurita").forEach(btn => {
+        const pais = btn.previousElementSibling?.innerText || "";
+    });
+
+    const botones = document.querySelectorAll(".figurita");
+    let index = 0;
+
+    document.querySelectorAll(".titulo").forEach(titulo => {
+        const pais = titulo.innerText.replace("🌍 ","");
+
+        for(let i=1;i<=20;i++) {
+            const id = `${pais}-${i}`;
+
+            if(guardadas.includes(id)) {
+                botones[index].classList.add("activa");
+            }
+
+            index++;
+        }
+    });
+
+    actualizar();
+};
+</script>
+
+
+<script>
+function buscarPais() {
+    let input = document.getElementById("buscador").value.toUpperCase();
+    let titulos = document.querySelectorAll(".titulo");
+
+    titulos.forEach(titulo => {
+        let texto = titulo.innerText.toUpperCase();
+
+        let elementos = [];
+        let siguiente = titulo.nextElementSibling;
+
+        while (siguiente && !siguiente.classList.contains("titulo")) {
+            elementos.push(siguiente);
+            siguiente = siguiente.nextElementSibling;
+        }
+
+        if (texto.includes(input)) {
+            titulo.style.display = "block";
+            elementos.forEach(el => el.style.display = "block");
+        } else {
+            titulo.style.display = "none";
+            elementos.forEach(el => el.style.display = "none");
+        }
+    });
+}
+</script>
+
+</body>
+</html>
